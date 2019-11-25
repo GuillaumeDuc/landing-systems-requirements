@@ -23,7 +23,7 @@ class OpenCsv extends Component {
       <div className="container">
         <CSVReader
           cssClass="react-csv-input"
-          label="Select CSV"
+          label="Select Requirements"
           onFileLoaded={this.handleForce}
           parserOptions={this.papaparseOptions}
         />

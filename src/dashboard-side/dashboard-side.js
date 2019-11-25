@@ -14,13 +14,7 @@ class DashboardSide extends Component {
         </div>
         <DashboardCentral />
         <div className="dashboard-side dashboard-right">
-          <MovingPane content={<ChangeMode />} />
-          <MovingPane />
-          <MovingPane />
-          <MovingPane />
-          <MovingPane />
-          <MovingPane />
-          <MovingPane />
+          <MovingPane content={<ChangeMode />} hidden={true} />
         </div>
       </div>
     );

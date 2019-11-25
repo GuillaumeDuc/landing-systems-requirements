@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import DashboardSide from "./dashboard-side/dashboard-side";
+import RequirementComponent from "./components/requirement-component";
 import "./assets/styles/app.scss";
 
 initializeIcons();
@@ -21,6 +22,10 @@ class App extends Component {
           <Header />
           <div className="dashboard-content">
             <Switch>
+              <Route
+                path="/requirement/:data"
+                component={RequirementComponent}
+              />
               <Route path="/other" render={() => <div>Other</div>} />
               <Route component={DashboardSide} />
             </Switch>
