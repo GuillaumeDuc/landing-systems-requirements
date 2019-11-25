@@ -2,16 +2,15 @@ import React, { Component } from "react";
 
 import DashboardCentral from "../dashboard-central/dashboard-central";
 import MovingPane from "./moving-pane";
-import CheckList from "../components/checklist";
 import ChangeMode from "../components/change-mode";
+import OpenCsv from "../components/open-csv";
 
 class DashboardSide extends Component {
   render() {
     return (
       <div className="dashboard-side-panel">
         <div className="dashboard-side dashboard-left">
-          <MovingPane content={<CheckList />} />
-          <MovingPane content={"Text"} />
+          <MovingPane content={<OpenCsv />} />
         </div>
         <DashboardCentral />
         <div className="dashboard-side dashboard-right">

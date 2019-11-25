@@ -120,6 +120,7 @@ body {
   width: 100%;
   padding: 5px 0 0 5px;
   .moving-pane-content {
+    overflow: auto;
     background-color: black;
     opacity: 0.5;
     width: 80%;

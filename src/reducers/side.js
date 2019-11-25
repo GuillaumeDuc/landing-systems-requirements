@@ -1,5 +1,6 @@
 const initialState = {
-  mode: ""
+  mode: "",
+  csv: ""
 };
 
 function side(state = initialState, action) {
@@ -8,6 +9,11 @@ function side(state = initialState, action) {
       return {
         ...state,
         mode: action.mode
+      };
+    case "SET_CSV":
+      return {
+        ...state,
+        csv: action.csv
       };
     default:
       return state;
