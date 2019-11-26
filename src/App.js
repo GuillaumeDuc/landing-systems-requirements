@@ -8,6 +8,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import DashboardSide from "./dashboard-side/dashboard-side";
 import RequirementComponent from "./components/requirement-component";
+import Relation from "./components/relation";
 import "./assets/styles/app.scss";
 
 initializeIcons();
@@ -26,7 +27,7 @@ class App extends Component {
                 path="/requirement/:data"
                 component={RequirementComponent}
               />
-              <Route path="/other" render={() => <div>Relation</div>} />
+              <Route path="/other" component={Relation} />
               <Route component={DashboardSide} />
             </Switch>
           </div>

@@ -5,21 +5,52 @@ import {
   Dropdown,
   DropdownMenuItemType
 } from "office-ui-fabric-react/lib-commonjs/Dropdown";
+import { DefaultButton } from "office-ui-fabric-react/lib-commonjs/Button";
+import { setRelation } from "../actions/side";
 
 class RequirementComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedItem: ""
+      selectedType: "",
+      selectedRelation: ""
     };
     this.getRequirement = this.getRequirement.bind(this);
-    this._onChange = this._onChange.bind(this);
+    this._onChangeType = this._onChangeType.bind(this);
+    this._onChangeRelation = this._onChangeRelation.bind(this);
+    this.makeRelation = this.makeRelation.bind(this);
+  }
+
+  componentDidMount() {
+    const table = this.props.csv;
+    const relationReq = this.props.relation;
+    const currentReq = this.getRequirementFromTableIndex(
+      table,
+      this.props.match.params.data
+    );
+    let nReq = {};
+    relationReq.map(obj => {
+      if (obj.x === currentReq.link) {
+        nReq = { relation: obj.relation, link: obj.y };
+      } else if (obj.y === currentReq.link) {
+        nReq = { relation: obj.relation, link: obj.x };
+      }
+      return nReq;
+    });
+
+    const secondReq = this.getRequirementFromTableLink(table, nReq.link);
+
+    if (nReq.relation) {
+      this.setState({
+        selectedType: { key: nReq.relation },
+        selectedRelation: { key: secondReq.requirements }
+      });
+    }
   }
 
   getRequirement() {
     const indexData = this.props.match.params.data;
     const table = this.props.csv;
-    console.log(table);
     let nRequirement = [];
     if (table) {
       table.map((obj, index) => {
@@ -55,6 +86,59 @@ class RequirementComponent extends Component {
     return nRequirement;
   }
 
+  getRequirementFromTableText(table, requirement) {
+    let nRequirement = {};
+    table.map((obj, index) => {
+      if (requirement.text === obj.requirements) {
+        return (nRequirement = obj);
+      }
+      return nRequirement;
+    });
+    return nRequirement;
+  }
+
+  getRequirementFromTableIndex(table, indexData) {
+    let nRequirement = {};
+    table.map((obj, index) => {
+      if (parseInt(indexData) === index) {
+        return (nRequirement = obj);
+      }
+      return nRequirement;
+    });
+    return nRequirement;
+  }
+
+  getRequirementFromTableLink(table, link) {
+    let nRequirement = {};
+    table.map((obj, index) => {
+      if (link === obj.link) {
+        return (nRequirement = obj);
+      }
+      return nRequirement;
+    });
+    return nRequirement;
+  }
+
+  makeRelation() {
+    const table = this.props.csv;
+    const relation = this.props.relation;
+    const currentReq = this.getRequirementFromTableIndex(
+      table,
+      this.props.match.params.data
+    );
+    const relationReq = this.getRequirementFromTableText(
+      table,
+      this.state.selectedRelation
+    );
+    relation.push({
+      x: relationReq.link,
+      y: currentReq.link,
+      relation: this.state.selectedType.text
+    });
+    this.props.setRelation(relation);
+    this.props.history.push("/other");
+  }
+
   getDropDownFromTable() {
     const table = this.props.csv;
     let nRequirement = [
@@ -66,32 +150,34 @@ class RequirementComponent extends Component {
     ];
     if (table) {
       table.map((obj, index) => {
-        return nRequirement.push({ key: index, text: obj.requirements });
+        return nRequirement.push({
+          key: obj.requirements,
+          text: obj.requirements
+        });
       });
     }
     return nRequirement;
   }
 
-  _onChange = (event, item) => {
-    console.log(
-      `Selection change: ${item.text} ${
-        item.selected ? "selected" : "unselected"
-      }`
-    );
-    this.setState({ selectedItem: item });
+  _onChangeType = (event, item) => {
+    this.setState({ selectedType: item });
+  };
+
+  _onChangeRelation = (event, item) => {
+    this.setState({ selectedRelation: item });
   };
 
   render() {
     const dropDownTable = this.getDropDownFromTable();
     const requirement = this.getRequirement();
-    const { selectedItem } = this.state;
+    const { selectedRelation, selectedType } = this.state;
     return (
       <div className="dashboard-central">
         <div className="ls-requirement-focus">{requirement}</div>
         <Dropdown
           label="Select type of relation"
-          selectedKey={selectedItem ? selectedItem.key : undefined}
-          onChange={this._onChange}
+          selectedKey={selectedType ? selectedType.key : undefined}
+          onChange={this._onChangeType}
           placeholder="Select type of relation"
           options={[
             {
@@ -110,24 +196,37 @@ class RequirementComponent extends Component {
         />
         <div className="ls-requirement-focus">
           <Dropdown
-            label="Select relation"
-            selectedKey={selectedItem ? selectedItem.key : undefined}
-            onChange={this._onChange}
+            label="Select Requirement"
+            selectedKey={selectedRelation ? selectedRelation.key : undefined}
+            onChange={this._onChangeRelation}
             placeholder="Select relation"
             options={dropDownTable}
             styles={{ dropdown: { width: 300 } }}
           />
         </div>
+        <DefaultButton
+          text="Make relation"
+          onClick={this.makeRelation}
+          allowDisabledFocus
+          disabled={false}
+          checked={false}
+        />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return { csv: state.side.csv };
+const mapDispatchToProps = dispatch => {
+  return {
+    setRelation: relation => {
+      dispatch(setRelation(relation));
+    }
+  };
 };
 
-const mapDispatchToProps = {};
+const mapStateToProps = state => {
+  return { csv: state.side.csv, relation: state.side.relation };
+};
 
 export default connect(
   mapStateToProps,

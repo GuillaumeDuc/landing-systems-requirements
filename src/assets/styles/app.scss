@@ -48,6 +48,7 @@ body {
 
 .dashboard-content {
   display: flex;
+  overflow: auto;
   flex-direction: row;
   align-items: flex-start;
   font-size: calc(10px + 2vmin);
@@ -78,6 +79,15 @@ body {
 
   .dashboard-central::-webkit-scrollbar {
     display: none;
+  }
+
+  .dashboard-relation {
+    overflow: auto;
+    align-items: center;
+    padding: 2% 15%;
+    padding-bottom: 75px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -217,6 +227,10 @@ body {
 .ms-Dropdown-label {
   font-size: 1em;
   color: white;
+}
+
+.ms-Button {
+  margin: auto;
 }
 
 .csv-input {
