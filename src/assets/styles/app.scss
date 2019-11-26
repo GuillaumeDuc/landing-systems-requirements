@@ -195,6 +195,7 @@ body {
     width: 100%;
     border: 2px solid #434956;
     .ls-row-title {
+      text-transform: capitalize;
     }
     .ls-row {
       font-size: 0.5em;
@@ -206,7 +207,16 @@ body {
 }
 .ls-requirement-focus {
   padding: 10px;
+  margin: 20px 0px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ms-Dropdown {
+  width: 100%;
+}
+.ms-Dropdown-label {
+  font-size: 1em;
+  color: white;
 }
 
 .csv-input {

@@ -19,6 +19,7 @@ class RequirementComponent extends Component {
   getRequirement() {
     const indexData = this.props.match.params.data;
     const table = this.props.csv;
+    console.log(table);
     let nRequirement = [];
     if (table) {
       table.map((obj, index) => {
@@ -29,7 +30,19 @@ class RequirementComponent extends Component {
                 <div className="ls-line">
                   <div className="ls-requirements">
                     <div className="ls-row-title">{key}</div>
-                    <div className="ls-row">{obj[key]}</div>
+                    <div className="ls-row">
+                      {key === "link" ? (
+                        <a
+                          href={obj[key]}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {obj[key]}
+                        </a>
+                      ) : (
+                        obj[key]
+                      )}
+                    </div>
                   </div>
                 </div>
               );
@@ -37,6 +50,23 @@ class RequirementComponent extends Component {
           );
         }
         return nRequirement;
+      });
+    }
+    return nRequirement;
+  }
+
+  getDropDownFromTable() {
+    const table = this.props.csv;
+    let nRequirement = [
+      {
+        key: "requirements",
+        text: "Requirements",
+        itemType: DropdownMenuItemType.Header
+      }
+    ];
+    if (table) {
+      table.map((obj, index) => {
+        return nRequirement.push({ key: index, text: obj.requirements });
       });
     }
     return nRequirement;
@@ -52,43 +82,42 @@ class RequirementComponent extends Component {
   };
 
   render() {
+    const dropDownTable = this.getDropDownFromTable();
     const requirement = this.getRequirement();
     const { selectedItem } = this.state;
     return (
       <div className="dashboard-central">
         <div className="ls-requirement-focus">{requirement}</div>
-        <div>DEPENDS OF :</div>
         <Dropdown
-          label="Select relation"
+          label="Select type of relation"
           selectedKey={selectedItem ? selectedItem.key : undefined}
           onChange={this._onChange}
-          placeholder="Select an option"
+          placeholder="Select type of relation"
           options={[
             {
-              key: "Requirements",
-              text: "Fruits",
-              itemType: DropdownMenuItemType.Header
+              key: "disjoins",
+              text: "Disjoins"
             },
-            { key: "apple", text: "Apple" },
-            { key: "banana", text: "Banana" },
-            { key: "orange", text: "Orange", disabled: true },
-            { key: "grape", text: "Grape" },
-            {
-              key: "divider_1",
-              text: "-",
-              itemType: DropdownMenuItemType.Divider
-            },
-            {
-              key: "vegetablesHeader",
-              text: "Vegetables",
-              itemType: DropdownMenuItemType.Header
-            },
-            { key: "broccoli", text: "Broccoli" },
-            { key: "carrot", text: "Carrot" },
-            { key: "lettuce", text: "Lettuce" }
+            { key: "belongs", text: "Belongs" },
+            { key: "repeats", text: "Repeats" },
+            { key: "contradicts", text: "Contradicts" },
+            { key: "extends", text: "Extends" },
+            { key: "excepts", text: "Excepts" },
+            { key: "constraints", text: "Constraints" },
+            { key: "characterizes", text: "characterizes" }
           ]}
           styles={{ dropdown: { width: 300 } }}
         />
+        <div className="ls-requirement-focus">
+          <Dropdown
+            label="Select relation"
+            selectedKey={selectedItem ? selectedItem.key : undefined}
+            onChange={this._onChange}
+            placeholder="Select relation"
+            options={dropDownTable}
+            styles={{ dropdown: { width: 300 } }}
+          />
+        </div>
       </div>
     );
   }

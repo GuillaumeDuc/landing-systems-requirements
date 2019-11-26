@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <div>
         <Navbar bg="dark" expand="lg" variant="dark">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home">Dashboard</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -20,9 +20,8 @@ class Header extends Component {
                 Home
               </Link>
               <Link to="/other" className="header-link">
-                Other
+                Relation
               </Link>
-              <Nav.Link href="#other">Link</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

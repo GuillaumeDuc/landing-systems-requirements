@@ -26,7 +26,7 @@ class App extends Component {
                 path="/requirement/:data"
                 component={RequirementComponent}
               />
-              <Route path="/other" render={() => <div>Other</div>} />
+              <Route path="/other" render={() => <div>Relation</div>} />
               <Route component={DashboardSide} />
             </Switch>
           </div>
