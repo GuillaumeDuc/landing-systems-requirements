@@ -8,37 +8,56 @@ class Relation extends Component {
     this.tableToDiv = this.tableToDiv.bind(this);
   }
 
+  getPicture(elem) {
+    return (
+      <object
+        type="image/svg+xml"
+        data={"../assets/images/" + elem + ".svg"}
+        class="logo"
+      >
+        Kiwi Logo
+      </object>
+    );
+  }
+
   tableToDiv(table) {
     let nTable = [];
     if (table) {
       nTable = table.map((obj, index) => {
         const listDiv = (
-          <div className="ls-line">
-            {Object.keys(obj).map(key => {
-              let divElement;
-              if (key === "x" || key === "y") {
-                /*divElement = (
+          <div className="ls-relation">
+            <div className="ls-line">
+              {Object.keys(obj).map(key => {
+                let divElement;
+                if (key === "x" || key === "y") {
+                  /*divElement = (
                   <iframe
                     id="iframeId"
                     src={obj[key]}
                     style={{ display: "none" }}
                   ></iframe>
                 );*/
-                divElement = (
-                  <a href={obj[key]} rel="noopener noreferrer" target="_blank">
-                    {obj[key]}
-                  </a>
+                  divElement = (
+                    <a
+                      href={obj[key]}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {obj[key]}
+                    </a>
+                  );
+                } else {
+                  divElement = obj[key];
+                }
+                return (
+                  <div className="ls-requirements">
+                    <div className="ls-row-title">{key}</div>
+                    <div className="ls-row">{divElement}</div>
+                  </div>
                 );
-              } else {
-                divElement = obj[key];
-              }
-              return (
-                <div className="ls-requirements">
-                  <div className="ls-row-title">{key}</div>
-                  <div className="ls-row">{divElement}</div>
-                </div>
-              );
-            })}
+              })}
+            </div>
+            {this.getPicture(obj.relation)}
           </div>
         );
         return listDiv;

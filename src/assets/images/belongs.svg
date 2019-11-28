@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-opacity="1" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" width="335" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" height="146" font-family="'Dialog'" font-style="normal" stroke-linejoin="miter" font-size="12px" stroke-dashoffset="0" image-rendering="auto">
+
+  <defs id="genericDefs"/>
+  <g>
+    <defs id="defs1">
+      <linearGradient x1="330.0027" gradientUnits="userSpaceOnUse" x2="426.6694" y1="509.0656" y2="509.0656" id="linearGradient1" spreadMethod="reflect">
+        <stop stop-opacity="1" stop-color="rgb(153,204,255)" offset="0%"/>
+        <stop stop-opacity="1" stop-color="rgb(204,255,255)" offset="100%"/>
+      </linearGradient>
+      <linearGradient x1="351.2006" gradientUnits="userSpaceOnUse" x2="414.7572" y1="526.1544" y2="566.3578" id="linearGradient2" spreadMethod="reflect">
+        <stop stop-opacity="1" stop-color="rgb(153,204,255)" offset="0%"/>
+        <stop stop-opacity="1" stop-color="rgb(204,255,255)" offset="100%"/>
+      </linearGradient>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
+        <path d="M0 0 L335 0 L335 146 L0 146 L0 0 Z"/>
+      </clipPath>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
+        <path d="M108 494 L443 494 L443 640 L108 640 L108 494 Z"/>
+      </clipPath>
+    </defs>
+    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="translate(-108,-494)" stroke="white">
+      <rect x="108" width="335" height="146" y="494" clip-path="url(#clipPath2)" stroke="none"/>
+    </g>
+    <g fill="url(#linearGradient1)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-108,-494)" stroke="url(#linearGradient1)">
+      <ellipse rx="72.5" ry="37.1905" clip-path="url(#clipPath2)" cx="354.1694" cy="546.2561" stroke="none"/>
+    </g>
+    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-108,-494)" stroke-linecap="butt">
+      <ellipse rx="72.5" fill="none" ry="37.1905" clip-path="url(#clipPath2)" cx="354.1694" cy="546.2561"/>
+      <text x="316.3253" xml:space="preserve" y="550.7913" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none"><a id="belongs_link_x" href="">X</a></text>
+    </g>
+    <g fill="url(#linearGradient2)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-108,-494)" stroke="url(#linearGradient2)">
+      <circle r="20.1017" clip-path="url(#clipPath2)" cx="382.9789" cy="546.2561" stroke="none"/>
+    </g>
+    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-108,-494)" stroke-linecap="butt">
+      <circle fill="none" r="20.1017" clip-path="url(#clipPath2)" cx="382.9789" cy="546.2561"/>
+      <text x="379.2406" xml:space="preserve" y="550.7913" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none"><a id="belongs_link_y" href="">Y</a></text>
+    </g>
+    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-108,-494)" stroke-linecap="butt">
+      <circle fill="none" r="11" clip-path="url(#clipPath2)" cx="354.1694" cy="613.6953"/>
+      <text x="350.853" xml:space="preserve" y="618.2305" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">P</text>
+    </g>
+    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-108,-494)" stroke-linecap="butt">
+      <circle fill="none" r="11" clip-path="url(#clipPath2)" cx="411.7884" cy="613.6953"/>
+      <text x="408.472" xml:space="preserve" y="618.2305" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">P</text>
+    </g>
+    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-108,-494)" stroke-linecap="butt">
+      <text x="134.2765" xml:space="preserve" y="550.7913" clip-path="url(#clipPath2)" stroke="none">Y</text>
+      <text x="248.3518" xml:space="preserve" y="550.7913" clip-path="url(#clipPath2)" stroke="none">X</text>
+      <path fill="none" d="M375.0872 564.7294 L361.6326 596.2249" clip-path="url(#clipPath2)"/>
+      <path d="M358.4898 603.5817 L367.802 594.5107 L362.0255 595.3053 L358.606 590.5823 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M390.8706 564.7294 L404.3252 596.2249" clip-path="url(#clipPath2)"/>
+      <path d="M407.468 603.5817 L407.3518 590.5822 L403.9324 595.3053 L398.1558 594.5107 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" stroke-dasharray="6,2" d="M153.0148 546.2561 L229.1077 546.2561" clip-path="url(#clipPath2)"/>
+      <path stroke-dasharray="6,2" d="M237.1077 546.2561 L225.1077 541.2561 L228.1077 546.2561 L225.1077 551.2561 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <text x="144.569" xml:space="preserve" y="541.5679" clip-path="url(#clipPath2)" stroke="none">&lt;&lt;BELONGS&gt;&gt;</text>
+    </g>
+  </g>
+</svg>
