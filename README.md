@@ -1,7 +1,5 @@
 # Requirements Helper
 
-## Using application
-
 Go to [https://guillaumeduc.github.io/landing-systems-requirements/](https://guillaumeduc.github.io/landing-systems-requirements/) to use the application.
 
 ## Launching dev application
