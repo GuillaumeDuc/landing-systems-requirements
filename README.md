@@ -46,4 +46,7 @@ If you want to make a new relation :
 
 ## Export a CSV file
 
-You can export either the requirements or the relations in CSV. To do that, click on the link in the right panel, named **Download Requirements CSV** or **Download Relations CSV**.
+You can export either the requirements or the relations in CSV.
+
+- Go to **home**
+- Click on the link in the right panel, named **Download Requirements CSV** or **Download Relations CSV**.
