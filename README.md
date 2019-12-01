@@ -1,8 +1,12 @@
 # Requirements Helper
 
+## Using application
+
+Go to [https://guillaumeduc.github.io/landing-systems-requirements/](https://guillaumeduc.github.io/landing-systems-requirements/) to use the application.
+
 ## Launching dev application
 
-Requirement Helper is a react projet, therefore you have to :
+This helper is a react projet, therefore you have to :
 
 - Clone the repository
 - Run **npm install**
