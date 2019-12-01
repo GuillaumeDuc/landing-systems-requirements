@@ -5,7 +5,7 @@ class MovingPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hidden: false
+      hidden: props.hidden ? true : false
     };
     this.handleClick = this.handleClick.bind(this);
   }
