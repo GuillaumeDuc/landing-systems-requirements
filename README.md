@@ -13,7 +13,8 @@ Requirement Helper is a react projet, therefore you have to :
 
 Download our requirements file :
 
-- Go to : > [https://docs.google.com/spreadsheets/d/1NO4hheidI9EHcjlyHYUlesp70QjzPgsnE8K1dB3Gkew/edit#gid=0](https://docs.google.com/spreadsheets/d/1NO4hheidI9EHcjlyHYUlesp70QjzPgsnE8K1dB3Gkew/edit#gid=0)
+- Go to : 
+  > [https://docs.google.com/spreadsheets/d/1NO4hheidI9EHcjlyHYUlesp70QjzPgsnE8K1dB3Gkew/edit#gid=0](https://docs.google.com/spreadsheets/d/1NO4hheidI9EHcjlyHYUlesp70QjzPgsnE8K1dB3Gkew/edit#gid=0)
 
 - Be sure the current sheet is **Requirements**
 - Click file, download, download in csv.
