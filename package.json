@@ -8,6 +8,7 @@
     "office-ui-fabric-react": "^7.64.2",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
+    "react-csv": "^1.1.2",
     "react-csv-reader": "^2.0.2",
     "react-dom": "^16.9.0",
     "react-draggable": "^4.1.0",

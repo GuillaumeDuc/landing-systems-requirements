@@ -9,15 +9,7 @@ class Relation extends Component {
   }
 
   getPicture(elem) {
-    return (
-      <object
-        type="image/svg+xml"
-        data={"../assets/images/" + elem + ".svg"}
-        class="logo"
-      >
-        Kiwi Logo
-      </object>
-    );
+    return "";
   }
 
   tableToDiv(table) {
